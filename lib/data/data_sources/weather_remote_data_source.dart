@@ -5,14 +5,14 @@ import 'package:clean_weather_app/core/errors/exceptions.dart';
 import 'package:clean_weather_app/data/models/weather_model.dart';
 import 'package:http/http.dart' as http;
 
-abstract class RemoteDataSource {
+abstract class WeatherRemoteDataSource {
   Future<WeatherModel> getCurrentWeather(String cityName);
 }
 
-class RemoteDataSourceImpl extends RemoteDataSource {
+class WeatherRemoteDataSourceImpl extends WeatherRemoteDataSource {
   final http.Client client;
 
-  RemoteDataSourceImpl(this.client);
+  WeatherRemoteDataSourceImpl(this.client);
 
   @override
   Future<WeatherModel> getCurrentWeather(String cityName) async {

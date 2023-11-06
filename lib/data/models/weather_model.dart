@@ -45,6 +45,16 @@ class WeatherModel extends WeatherEntity {
         'name': cityName,
       };
 
+  WeatherEntity toEntity() => WeatherEntity(
+        cityName: cityName,
+        main: main,
+        description: description,
+        iconCode: iconCode,
+        temperature: temperature,
+        pressure: pressure,
+        umidity: umidity,
+      );
+
   @override
   List<Object?> get props => [
         cityName,

@@ -1,6 +1,6 @@
 import 'package:clean_weather_app/core/constants/constants.dart';
 import 'package:clean_weather_app/core/errors/exceptions.dart';
-import 'package:clean_weather_app/data/data_sources/remote_data_source.dart';
+import 'package:clean_weather_app/data/data_sources/weather_remote_data_source.dart';
 import 'package:clean_weather_app/data/models/weather_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -10,13 +10,13 @@ import '../../helpers/json_reader.dart';
 import '../../helpers/test_helper.mocks.dart';
 
 void main() {
-  late RemoteDataSource remoteDataSourceImpl;
+  late WeatherRemoteDataSource weatherRemoteDataSourceImpl;
   late MockHttpClient mockHttpClient;
   const testCityName = 'Rio';
 
   setUp(() {
     mockHttpClient = MockHttpClient();
-    remoteDataSourceImpl = RemoteDataSourceImpl(mockHttpClient);
+    weatherRemoteDataSourceImpl = WeatherRemoteDataSourceImpl(mockHttpClient);
   });
 
   test('should return WeatherModel if request is success', () async {
@@ -28,7 +28,8 @@ void main() {
       ),
     );
 
-    final result = await remoteDataSourceImpl.getCurrentWeather(testCityName);
+    final result =
+        await weatherRemoteDataSourceImpl.getCurrentWeather(testCityName);
 
     expect(result, isA<WeatherModel>());
   });
@@ -42,7 +43,7 @@ void main() {
       ),
     );
 
-    final result = remoteDataSourceImpl.getCurrentWeather(testCityName);
+    final result = weatherRemoteDataSourceImpl.getCurrentWeather(testCityName);
 
     expect(result, throwsA(isA<ServerException>()));
   });
