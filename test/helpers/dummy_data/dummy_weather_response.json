@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 21.7833,
+        "lat": 38.3
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 292.98,
+        "feels_like": 292.95,
+        "temp_min": 290.81,
+        "temp_max": 293.57,
+        "pressure": 1010,
+        "humidity": 74
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.43,
+        "deg": 264,
+        "gust": 2.31
+    },
+    "clouds": {
+        "all": 80
+    },
+    "dt": 1698967879,
+    "sys": {
+        "type": 2,
+        "id": 2073069,
+        "country": "GR",
+        "sunrise": 1698987635,
+        "sunset": 1699025531
+    },
+    "timezone": 7200,
+    "id": 254315,
+    "name": "Rio",
+    "cod": 200
+}
